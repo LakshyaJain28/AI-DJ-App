@@ -20,7 +20,23 @@ function setup()
     video=createCapture(VIDEO);
     video.hide();
 }
+function modelLoaded()
+{
+    console.log("Model Is Loaded");
+}
 
+function gotPoses(results)
+{
+    if(results.length>0)
+    {
+        console.log(results);
+        rightWristX=results[0].pose.rightWrist.x;
+        rightWristY=results[0].pose.rightWrist.y;
+
+        leftWristX=results[0].pose.leftWrist.x;
+        leftWristY=results[0].pose.leftWrist.y;
+    }
+}
 function draw()
 {
     image(video,0,0,600,500);
