@@ -16,4 +16,6 @@ canvas{
 }
 #song_name{
     font-size: 25px;
+    bottom: 0;
+    position: fixed;
 }
