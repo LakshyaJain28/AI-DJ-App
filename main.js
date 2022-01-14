@@ -50,15 +50,15 @@ function gotPoses(results)
 function draw()
 {
     image(video,0,0,600,500);
-    song1_staus=song1.isPlaying();
-    song2_staus=song2.isPlaying();
+    song1_status=song1.isPlaying();
+    song2_status=song2.isPlaying();
     fill("red");
     stroke("red");
     if(scoreRightWrist>0.2)
     {
         circle(rightWristX,rightWristY,20);
         song2.stop();
-        if(song1_staus==false){
+        if(song1_status==false){
             song1.play();
             document.getElementById("song_name").innerHTML="Playing Harry Potter Theme Song.";
 
@@ -68,8 +68,8 @@ function draw()
     {
         circle(leftWristX,leftWristY,20);
         song1.stop();
-        if(song2_staus==false){
-            song1.play();
+        if(song2_status==false){
+            song2.play();
             document.getElementById("song_name").innerHTML="Playing The Faded Song.";
             
         }
